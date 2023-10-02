@@ -34,4 +34,23 @@ interface SearchResponse extends GeneralResponse {
     };
 }
 
+export interface SearchCommentResponse extends GeneralResponse {
+    data: (
+        | {
+              _id: number;
+              host_id: number;
+              mbti: string;
+              like: boolean;
+              comment?: undefined;
+          }
+        | {
+              _id: number;
+              host_id: number;
+              mbti: string;
+              like: boolean;
+              comment: string;
+          }
+    )[];
+}
+
 export default SearchResponse;
